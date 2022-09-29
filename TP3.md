@@ -414,10 +414,10 @@ drwxr-x--- 2 User User 6 Sep 29 12:29 dossier
 ```
 
 13. **Transcrivez les commandes suivantes de la notation classique à la notation octale ou vice-versa (vous pourrez vous aider de la commande stat pour valider vos réponses) :**
-    **- chmod u=rx,g=wx,o=r fic**
-    **- chmod uo+w,g-rx fic en sachant que les droits initiaux de fic sont r--r-x---**
-    **- chmod 653 fic en sachant que les droits initiaux de fic sont 711**
-    **- chmod u+x,g=w,o-r fic en sachant que les droits initiaux de fic sont r--r-x---**
+- chmod u=rx,g=wx,o=r fic
+- chmod uo+w,g-rx fic en sachant que les droits initiaux de fic sont r--r-x---
+- chmod 653 fic en sachant que les droits initiaux de fic sont 711
+- chmod u+x,g=w,o-r fic en sachant que les droits initiaux de fic sont r--r-x---
 
 - chmod u=rx,g=wx,o=r fic
   `chmod 534 fic`
