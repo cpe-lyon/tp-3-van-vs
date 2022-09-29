@@ -11,44 +11,46 @@
 
 2. **Créez ensuite 4 utilisateurs aliace, bob, charlie, dave avec la commande useradd, en demandant la création de leur dossier personnel et avec bash pour shell**
 
-'''consol
+```consol
     User@localhost:~$ sudo useradd -m alice
     User@localhost:~$ sudo usermod --shell /bin/bash alice
-'''
+```
 
-'''consol
+```consol
     User@localhost:~$ sudo useradd -m bob
     User@localhost:~$ sudo usermod --shell /bin/bash bob
-'''
+```
 
-'''consol
+```consol
     User@localhost:~$ sudo useradd -m charlie
     sudo usermod --shell /bin/bash charlie
-'''
+```
 
-'''consol
+```consol
     User@localhost:~$ sudo useradd -m dave
     User@localhost:~$ sudo usermod --shell /bin/bash dave
-'''
+```
 
 3. **Ajoutez les utilisateurs dans les groupes créés :**
     **- alice, bob, dave dans dev**
     **- bob, charlie, dave dans infra**
-
+```
     User@localhost:~$ sudo usermod -a -G dev alice
     User@localhost:~$ sudo usermod -a -G dev bob
     User@localhost:~$ sudo usermod -a -G dev dave
-
+```
+```consol
     User@localhost:~$ sudo usermod -a -G infra bob
     User@localhost:~$ sudo usermod -a -G infra charlie
     User@localhost:~$ sudo usermod -a -G infra dave
+```
 
 4. **Donnez deux moyens d’afficher les membres de infra**
-
+```consol
     User@localhost:~$ getent group infra
     User@localhost:~$ grep infra /etc/group
     infra:x:1003:dave
-
+```
 5. **Faites de dev le groupe propriétaire des répertoires /home/alice et /home/bob et de infra le groupe propriétaire de /home/charlie et /home/dave**
 
     User@localhost:~$ sudo chown :dev home/alice/
