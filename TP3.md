@@ -5,32 +5,27 @@
 1. **Utilisez la commande groupadd pour créer deux groupes dev et infra**
 
 ```consol
-    User@localhost:~$ sudo groupadd dev
-    User@localhost:~$ sudo groupadd infra
+User@localhost:~$ sudo groupadd dev
+User@localhost:~$ sudo groupadd infra
 ```
 
 2. **Créez ensuite 4 utilisateurs aliace, bob, charlie, dave avec la commande useradd, en demandant la création de leur dossier personnel et avec bash pour shell**
-
 ```consol
-    User@localhost:~$ sudo useradd -m alice
-    User@localhost:~$ sudo usermod --shell /bin/bash alice
+User@localhost:~$ sudo useradd -m alice
+User@localhost:~$ sudo usermod --shell /bin/bash alice
 ```
-
 ```consol
-    User@localhost:~$ sudo useradd -m bob
-    User@localhost:~$ sudo usermod --shell /bin/bash bob
+User@localhost:~$ sudo useradd -m bob
+User@localhost:~$ sudo usermod --shell /bin/bash bob
 ```
-
 ```consol
-    User@localhost:~$ sudo useradd -m charlie
-    sudo usermod --shell /bin/bash charlie
+User@localhost:~$ sudo useradd -m charlie
+sudo usermod --shell /bin/bash charlie
 ```
-
 ```consol
     User@localhost:~$ sudo useradd -m dave
     User@localhost:~$ sudo usermod --shell /bin/bash dave
 ```
-
 3. **Ajoutez les utilisateurs dans les groupes créés :**
     **- alice, bob, dave dans dev**
     **- bob, charlie, dave dans infra**
