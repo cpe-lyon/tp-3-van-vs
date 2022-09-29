@@ -218,7 +218,7 @@ Le mot de passe est mémorisé par défaut pour une durée de 15 minutes
 User@localhost:~$ sudo -k
 ```
 
-**Exercice 2. Gestion des permissions**
+## Exercice 2. Gestion des permissions
 
 1. **Dans votre $HOME, créez un dossier test, et dans ce dossier un fichier fichier contenant quelques lignes de texte. Quels sont les droits sur test et fichier ?**
 
