@@ -431,8 +431,3 @@ User@localhost:~$ ls -l /etc/passwd
 ```
 
 Tous les utilisateurs ont le droit de lecture, mais seulement l'utilisateur propriétaire a le droit d'écriture. Ce programme appartient à root, donc seulement root a le droit de l'exécuter.
-
-**Pour les plus rapides :**
-15. **Access Control Lists (ACL) : suivez le tutoriel de cette page : https://doc.ubuntu-fr.org/acl.**
-
-16. **Quotas disques : suivez le tutoriel de cette page : https://doc.ubuntu-fr.org/quota**
