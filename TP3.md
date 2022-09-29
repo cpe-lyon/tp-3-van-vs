@@ -4,10 +4,10 @@
 
 1. **Utilisez la commande groupadd pour créer deux groupes dev et infra**
 
-'''consol
+```consol
     User@localhost:~$ sudo groupadd dev
     User@localhost:~$ sudo groupadd infra
-'''
+```
 
 2. **Créez ensuite 4 utilisateurs aliace, bob, charlie, dave avec la commande useradd, en demandant la création de leur dossier personnel et avec bash pour shell**
 
