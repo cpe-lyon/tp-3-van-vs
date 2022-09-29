@@ -1,6 +1,6 @@
 ﻿**TP3**
 
-**Exercice 1 : Utilisateurs, groupes et permissions**
+## Exercice 1 : Utilisateurs, groupes et permissions 
 
 1. **Utilisez la commande groupadd pour créer deux groupes dev et infra**
 
