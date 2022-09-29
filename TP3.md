@@ -181,15 +181,15 @@ L'utilisteur charlie ne peut pas être retiré du groupe infra, car c'est son gr
 
 //man chage
 ```consol
-    User@localhost:~$ sudo chage -E 2021-06-01 -M 90 -m 6 -W 14 -I 30 dave 
-    User@localhost:~$ sudo chage -l dave
-    Last password change                                    : Sep 26, 2022
-    Password expires                                        : Dec 25, 2022
-    Password inactive                                       : Jan 24, 2023
-    Account expires                                         : Jun 01, 2021
-    Minimum number of days between password change          : 5
-    Maximum number of days between password change          : 90
-    Number of days of warning before password expires       : 14
+User@localhost:~$ sudo chage -E 2021-06-01 -M 90 -m 6 -W 14 -I 30 dave 
+User@localhost:~$ sudo chage -l dave
+Last password change                                    : Sep 26, 2022
+Password expires                                        : Dec 25, 2022
+Password inactive                                       : Jan 24, 2023
+Account expires                                         : Jun 01, 2021
+Minimum number of days between password change          : 5
+Maximum number of days between password change          : 90
+Number of days of warning before password expires       : 14
 ```
 
 17. **Quel est l’interpréteur de commandes (Shell) de l’utilisateur root ?**
