@@ -147,17 +147,32 @@ User@localhost:~$ id 1003
 uid=1003(bob) gid=1002(dev) groupes=1002(dev)
 ```
 
+```consol
+cut -d : -f1,3 /etc/passwd | grep “ :1003” | cut -d : -f1
+ou aussi : getent passwd 1003 | cut -d : -f1
+```
+
 13. **Quel est l’id du groupe dev ?**
 
 ```consol
 User@localhost:~$ grep ^dev /etc/group
 ```
+
+```consol
+grep ^dev /etc/group | cut -d : -f3
+```
+
 Donc l'id du groupe dev est 1002
 
 14. **Quel groupe a pour gid 1002 ? ( Rien n’empêche d’avoir un groupe dont le nom serait 1002...)**
 
 ```consol
 User@localhost:~$ getent group 1002
+```
+
+```consol
+grep “ :1003” /etc/group | cut -d : -f1
+ou getent group 1003 | cut -d : -f1
 ```
 
 Donc le groupe qui a pour gid 1002 est dev
@@ -199,6 +214,10 @@ User@localhost:~$ echo $SHELL
 /bin/bash
 ```
 
+```consol
+grep ^root /etc/passwd | cut -d : -f7 => /bin/bash
+```
+
 18. **Si vous regardez la liste des comptes présents sur la machine, vous verrez qu’il en existe un nommé nobody. A quoi correspond-il ?**
 
 ```consol
@@ -206,7 +225,7 @@ User@localhost:~$ grep nobody /etc/passwd
 nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
 ```
 
-nobody est le nom conventionnel d'un compte d'utilisateur à qui aucun fichier n'appartient, qui n'est dans aucun groupe qui a des privilèges et dont les seules possibilités sont celles que tous les "autres utilisateurs" ont.
+nobody est le nom conventionnel d'un compte d'utilisateur à qui aucun fichier n'appartient, qui n'est dans aucun groupe qui a des privilèges et dont les seules possibilités sont celles que tous les "autres utilisateurs" ont.  Il est courant de lancer des démons en tant que nobody, spécialement pour des serveurs, de façon à limiter les dommages qui pourrait être occasionnés par un utilisateur malicieux qui aurait réussi à prendre leur contrôle
 
 19. **Par défaut, combien de temps la commande sudo conserve-t-elle votre mot de passe en mémoire ?**
 
@@ -236,6 +255,11 @@ lecture et exécution pour tous les autres utilisateurs
 Les droits sur fichier.txt sont :
 lecture, ecriture pour l'utilisateur propriétaire
 lecture pour le groupe propriétaire et tous les autres utilisateurs
+
+```consol
+test : drwxrwxr-x
+fichier : -rw-rw-r–
+```
 
 2. **Retirez tous les droits sur ce fichier (même pour vous), puis essayez de le modifier et de l’afficher en tant que root. Conclusion ?**
 
@@ -290,6 +314,7 @@ echo Hello
 ```
 
 Je n'ai pas la permission de lister le contenu du répertoire, mais je peux l'exécuter et afficher son contenu.
+En revanche, si on connaît le chemin complet vers les fichiers, on peut afficher / exécuter ceux sur lesquels on a ces droits
 
 **Rétablissez le droit en lecture sur test.**
 
@@ -389,6 +414,10 @@ drwx------ 2 User User 6 Sep 29 11:47 interdit
 -rw------- 1 User User 0 Sep 29 11:47 NewFile
 ```
 
+```consol
+umask 077
+```
+
 11. **Définissez un umask très permissif qui autorise tout le monde à lire vos fichiers et traverser vos répertoires, mais n’autorise que vous à écrire. Testez sur un nouveau fichier et un nouveau répertoire.**
 
 ```consol
@@ -428,6 +457,11 @@ drwxr-x--- 2 User User 6 Sep 29 12:29 dossier
 ```consol
 User@localhost:~$ ls -l /etc/passwd
 -rw-r--r-- 1 root root 1957 Sep 26 09:30 /etc/passwd
+```
+
+```consol
+présence d’un indicateur particulier : ’s’ => setuid
+un utilisateur lance ce programme en prenant l’identité de root => indispensable pour qu’un utilisateur puisse modifier son mot de passe
 ```
 
 Tous les utilisateurs ont le droit de lecture, mais seulement l'utilisateur propriétaire a le droit d'écriture. Ce programme appartient à root, donc seulement root a le droit de l'exécuter.
